@@ -95,6 +95,7 @@
 
     #logo {
         max-width: 50px;
+        max-height: 50px;
     }
 
     .topnav a:not(:first-child),
