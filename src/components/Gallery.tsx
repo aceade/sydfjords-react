@@ -25,7 +25,7 @@ export default function Gallery(props: GalleryProps) {
     }
 
     function nextImage() {
-        if (currentImage < props.images.length) {
+        if (currentImage < props.images.length - 1) {
             setCurrentImage(currentImage + 1);
         } else {
             setCurrentImage(0);
