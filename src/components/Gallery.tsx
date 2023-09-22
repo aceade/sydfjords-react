@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Gallery.css";
 
 export interface ImageDetails {
     source?: string;
@@ -34,10 +35,14 @@ export default function Gallery(props: GalleryProps) {
 
     return (
         <div className="gallery">
-            <button onClick={previousImage}>back</button>
+            <div className="controls">
+                <button onClick={previousImage}>back</button>
+                <button onClick={nextImage}>next</button>
+            </div>
+            
             <img srcSet={props.images[currentImage].srcset} alt={props.images[currentImage].altText} src={props.images[currentImage].source} sizes={props.images[currentImage].sizes} ></img>
             <p>{props.images[currentImage].caption}</p>
-            <button onClick={nextImage}>next</button>
+            
         </div>
     )
 }

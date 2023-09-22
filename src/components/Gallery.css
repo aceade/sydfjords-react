@@ -1,0 +1,52 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.galleryItem p {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.galleryItem img {
+    max-width: 320px;
+}
+
+.controls {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.controls button{
+    min-width: 100px;
+}
+
+
+/* Larger than 600px wide, but less than 900 */
+@media (min-width: 600px) and (max-width: 900px) {
+    .galleryItem img {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1440px) {
+
+    .galleryItem img {
+        max-width: 900px;
+    }
+}
+/* Note to self: do NOT use "repeat" */
+@media (min-width: 1450px) {
+    .gallery {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 0.5fr 0.5fr;
+        gap: 20px;
+    }
+
+    .galleryItem img {
+        max-width: 800px;
+    }
+}
