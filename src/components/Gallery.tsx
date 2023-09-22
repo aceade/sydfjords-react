@@ -36,12 +36,12 @@ export default function Gallery(props: GalleryProps) {
     return (
         <div className="gallery">
             <div className="controls">
-                <button onClick={previousImage}>back</button>
-                <button onClick={nextImage}>next</button>
+                <button onClick={previousImage}>Last Image </button>
+                <button onClick={nextImage}>Next Image</button>
             </div>
             
-            <img srcSet={props.images[currentImage].srcset} alt={props.images[currentImage].altText} src={props.images[currentImage].source} sizes={props.images[currentImage].sizes} ></img>
             <p>{props.images[currentImage].caption}</p>
+            <img srcSet={props.images[currentImage].srcset} alt={props.images[currentImage].altText} src={props.images[currentImage].source} sizes={props.images[currentImage].sizes} ></img>
             
         </div>
     )
