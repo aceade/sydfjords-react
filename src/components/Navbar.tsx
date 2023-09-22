@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import './Navbar.css';
 
 export default function Navbar() {
@@ -54,19 +55,19 @@ export default function Navbar() {
         <header>
             <img id="logo" alt="" src="/sydfjords-react/icons/Sydfjords_Logo_1.png"/>
             <nav className="topnav">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
                 <div className="dropdown">
                     <button className="dropbtn" onClick={openSubMenu}>See and Do</button>
                     <div className="dropdown-content">
-                        <a href="/colwdvatn">Coldwatvn</a>
-                        <a href="/loremvik">Loremvik</a>
-                        <a href="/ipsumvatn">Ipsumvatn</a>
-                        <a href="/whales">Whale-Watching</a>
+                        <Link to="/colwdvatn">Coldwatvn</Link>
+                        <Link to="/loremvik">Loremvik</Link>
+                        <Link to="/ipsumvatn">Ipsumvatn</Link>
+                        <Link to="/whales">Whale-Watching</Link>
                     </div>
                 </div>
-                <a href="/hotels">Stay</a>
-                <a href="/travel">Get Here</a>
-            <a href="/about">About</a>
+                <Link to="/hotels">Stay</Link>
+                <Link to="/travel">Get Here</Link>
+            <Link to="/Linkbout">About</Link>
             <a className="icon" onClick={openMenu}>&#9776;</a>
             </nav>
         </header>
