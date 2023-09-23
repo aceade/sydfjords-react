@@ -130,7 +130,11 @@ i18n
             whales: "Whale-Watching",
             colwdvatn: "Colwdvatn",
             loremvik: "Loremvik",
-            ipsumvatn: "Ipsumvatn"
+            ipsumvatn: "Ipsumvatn",
+            changeLang: {
+              alt: "Change Language",
+              title: "Change Language",
+            }
           },
           buttons: {
             nextImage: ">",
@@ -254,7 +258,11 @@ i18n
             hotels: "Fán",
             travel: "Taistáil",
             about: "Faoin Suíomh",
-            whales: "Faireamh Ar Míolta Móra"
+            whales: "Faireamh Ar Míolta Móra",
+            changeLang: {
+              alt: "Athraigh Teanga",
+              title: "Athraigh Teanga",
+            }
           },
           buttons: {
             nextImage: ">",
@@ -378,7 +386,11 @@ i18n
             hotels: "Verweilen Sie",
             travel: "Kommen Sie Hier",
             about: "Um Dieser Seite",
-            whales: "Walbeobachtung"
+            whales: "Walbeobachtung",
+            changeLang: {
+              alt: "Sprache Wählen",
+              title: "Sprache Wählen"
+            }
           },
           buttons: {
             nextImage: ">",
@@ -502,7 +514,11 @@ i18n
             hotels: "Restare",
             travel: "Arrivare",
             about: "Informazioni",
-            whales: "Osservazione Delle Balene"
+            whales: "Osservazione Delle Balene",
+            changeLang: {
+              alt: "Cambia Lingua",
+              title: "Cambia Lingua",
+            }
           },
           buttons: {
             nextImage: ">",
@@ -629,7 +645,11 @@ i18n
             whales: "مشاهدة الحيتان",
             colwdvatn: "كولودفاتن",
             loremvik: "لوريمفيك",
-            ipsumvatn: "إبسومفاتن"
+            ipsumvatn: "إبسومفاتن",
+            changeLang: {
+              alt: "تغيير اللغة",
+              title: "تغيير اللغة",
+            }
           },
           buttons: {
             nextImage: ">",
@@ -756,7 +776,11 @@ i18n
             whales: "ホエールウォッチング",
             colwdvatn: "コルドヴァトン",
             loremvik: "ロレンヴィク",
-            ipsumvatn: "イプサムヴァトン"
+            ipsumvatn: "イプサムヴァトン",
+            changeLang: {
+              alt: "言語を変えてください",
+              title: "言語を変えてください",
+            }
           },
           buttons: {
             nextImage: ">",
