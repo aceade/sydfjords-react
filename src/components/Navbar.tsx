@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import './Navbar.css';
+import { useTranslation } from "react-i18next";
+
 
 /**
  * 
  * @returns a Navbar component. This contains a `<header>` tag.
  */
 export default function Navbar() {
+
+    const {t} = useTranslation();
 
     function openMenu() {
         const nav = document.querySelector("nav");
@@ -59,19 +63,19 @@ export default function Navbar() {
         <header>
             <img id="logo" alt="" src="/sydfjords-react/icons/Sydfjords_Logo_1.png"/>
             <nav className="topnav">
-                <Link to="/" onClick={closeAllMenus}>Home</Link>
+                <Link to="/" onClick={closeAllMenus}>{t("navbar.home")}</Link>
                     <div className="dropdown">
-                        <button className="dropbtn" onClick={openSubMenu}>See and Do</button>
+                        <button className="dropbtn" onClick={openSubMenu}>{t("navbar.see")}</button>
                         <div className="dropdown-content">
                             <Link to="/colwdvatn" onClick={closeAllMenus}>Coldwatvn</Link>
                             <Link to="/loremvik" onClick={closeAllMenus}>Loremvik</Link>
                             <Link to="/ipsumvatn" onClick={closeAllMenus}>Ipsumvatn</Link>
-                            <Link to="/whales" onClick={closeAllMenus}>Whale-Watching</Link>
+                            <Link to="/whales" onClick={closeAllMenus}>{t("navbar.whales")}</Link>
                         </div>
                     </div>
-                    <Link to="/hotels" onClick={closeAllMenus}>Stay</Link>
-                    <Link to="/travel" onClick={closeAllMenus}>Get Here</Link>
-                <Link to="/about" onClick={closeAllMenus}>About</Link>
+                    <Link to="/hotels" onClick={closeAllMenus}>{t("navbar.hotels")}</Link>
+                    <Link to="/travel" onClick={closeAllMenus}>{t("navbar.travel")}</Link>
+                <Link to="/about" onClick={closeAllMenus}>{t("navbar.about")}</Link>
                 <a className="icon" onClick={openMenu}>&#9776;</a>
             </nav>
         </header>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Gallery.css";
 import { ImageDetails } from "./ImageDetails";
-
+import { useTranslation } from 'react-i18next';
 
 export interface GalleryProps {
     images: ImageDetails[];
@@ -10,6 +10,7 @@ export interface GalleryProps {
 export default function Gallery(props: GalleryProps) {
 
     const [currentImage, setCurrentImage] = useState(0);
+    const { t } = useTranslation();
 
     function previousImage() {
         if (currentImage > 0) {
@@ -30,8 +31,8 @@ export default function Gallery(props: GalleryProps) {
     return (
         <div className="gallery">
             <div className="controls">
-                <button onClick={previousImage}>Last Image </button>
-                <button onClick={nextImage}>Next Image</button>
+                <button onClick={previousImage}>{t("buttons.lastImage")}</button>
+                <button onClick={nextImage}>{t("buttons.nextImage")}</button>
             </div>
             
             <p>{props.images[currentImage].caption}</p>
