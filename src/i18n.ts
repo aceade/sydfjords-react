@@ -253,7 +253,7 @@ i18n
             }
           },
           navbar: {
-            home: "Príomhlahtair",
+            home: "Príomhleathanach",
             see: "Le Déanamh",
             hotels: "Fán",
             travel: "Taistáil",
