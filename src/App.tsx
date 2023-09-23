@@ -1,7 +1,8 @@
 import './App.css'
 
 import Navbar from './components/Navbar';
-import Gallery, { ImageDetails } from './components/Gallery';
+import Gallery from './components/Gallery';
+import { ImageDetails } from './components/ImageDetails';
 
 function App() {
   
