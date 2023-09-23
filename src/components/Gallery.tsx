@@ -1,13 +1,7 @@
 import { useState } from "react";
 import "./Gallery.css";
+import { ImageDetails } from "./ImageDetails";
 
-export interface ImageDetails {
-    source?: string;
-    altText: string;
-    caption: string;
-    srcset: string;
-    sizes: string;
-}
 
 export interface GalleryProps {
     images: ImageDetails[];

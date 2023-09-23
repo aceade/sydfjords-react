@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import './Navbar.css';
 
+/**
+ * 
+ * @returns a Navbar component. This contains a `<header>` tag.
+ */
 export default function Navbar() {
 
     function openMenu() {
