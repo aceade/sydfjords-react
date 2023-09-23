@@ -11,11 +11,13 @@ export default function Navbar() {
 
     const {t, i18n } = useTranslation();
 
-    const lngs: any = {
+    const languages: any = {
         en: { nativeName: 'English' },
         de: { nativeName: 'Deutsch' },
         ga: { nativeName: 'Gaelige' },
-        it: { nativeName: 'Italiano' }
+        it: { nativeName: 'Italiano' },
+        ar: { nativeName: 'عربي', dir: 'rtl' },
+        ja: { nativeName: '日本語'}
       };
 
     function openMenu() {
@@ -65,6 +67,11 @@ export default function Navbar() {
         
     }
 
+    function changeLanguage(language: string) {
+        i18n.changeLanguage(language);
+        document.dir = i18n.dir(language);
+    }
+
     return (
         <>
         <header>
@@ -75,9 +82,9 @@ export default function Navbar() {
                         <img src="/sydfjords-react/icons/globe.svg"/>
                     </button>
                     <div className="dropdown-content">
-                    {Object.keys(lngs).map((lng) => (
-                        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
-                        {lngs[lng].nativeName}
+                    {Object.keys(languages).map((lng) => (
+                        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => changeLanguage(lng)}>
+                        {languages[lng].nativeName}
                         </button>
                     ))}
                     </div>
@@ -86,9 +93,9 @@ export default function Navbar() {
                     <div className="dropdown">
                         <button className="dropbtn" onClick={openSubMenu}>{t("navbar.see")}</button>
                         <div className="dropdown-content">
-                            <Link to="/colwdvatn" onClick={closeAllMenus}>Coldwatvn</Link>
-                            <Link to="/loremvik" onClick={closeAllMenus}>Loremvik</Link>
-                            <Link to="/ipsumvatn" onClick={closeAllMenus}>Ipsumvatn</Link>
+                            <Link to="/colwdvatn" onClick={closeAllMenus}>{t("navbar.colwdvatn")}</Link>
+                            <Link to="/loremvik" onClick={closeAllMenus}>{t("navbar.loremvik")}</Link>
+                            <Link to="/ipsumvatn" onClick={closeAllMenus}>{t("navbar.ipsumvatn")}</Link>
                             <Link to="/whales" onClick={closeAllMenus}>{t("navbar.whales")}</Link>
                         </div>
                     </div>
