@@ -9,7 +9,14 @@ import { useTranslation } from "react-i18next";
  */
 export default function Navbar() {
 
-    const {t} = useTranslation();
+    const {t, i18n } = useTranslation();
+
+    const lngs: any = {
+        en: { nativeName: 'English' },
+        de: { nativeName: 'Deutsch' },
+        ga: { nativeName: 'Gaelige' },
+        it: { nativeName: 'Italiano' }
+      };
 
     function openMenu() {
         const nav = document.querySelector("nav");
@@ -63,6 +70,18 @@ export default function Navbar() {
         <header>
             <img id="logo" alt="" src="/sydfjords-react/icons/Sydfjords_Logo_1.png"/>
             <nav className="topnav">
+                <div className="dropdown">
+                    <button className="dropbtn" onClick={openSubMenu}>
+                        <img src="/sydfjords-react/icons/globe.svg"/>
+                    </button>
+                    <div className="dropdown-content">
+                    {Object.keys(lngs).map((lng) => (
+                        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+                        {lngs[lng].nativeName}
+                        </button>
+                    ))}
+                    </div>
+                </div>
                 <Link to="/" onClick={closeAllMenus}>{t("navbar.home")}</Link>
                     <div className="dropdown">
                         <button className="dropbtn" onClick={openSubMenu}>{t("navbar.see")}</button>
