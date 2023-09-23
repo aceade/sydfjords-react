@@ -13,8 +13,6 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 - `pnpm run preview` deploys a local preview of the production build.
 - `pnpm update` updates all outdated dependencies.
 
-The build includes an imagemin task.
-
 ## Notes on responsiveness
 
 The targeted screen widths for this are:
@@ -26,8 +24,22 @@ The targeted screen widths for this are:
 - 1080
 - 1920 pixels (largest).
 
-Some pages use different line lengths
+## Accessibility
+
+I manually run this through the WAVE extension for Firefox. It hasn't reported anything yet, but improvements are welcome.
+
+## Localisation
+
+Localisation keys have been implemented across the site, but currently only the Navbar has actual translation values. This is limited to the current languages:
+- English (default)
+- Irish (purely because I *am* Irish)
+- German
+- Italian
+- Arabic
+- Japanese
+
+I am not a professional translator. Corrections are welcome.
 
 ## Credits/Sources
 
-All images are from [pexels.com](https://www.pexels.com/), except for the logo, which was generated using [Canva](https://canva.com).
+All images are from [pexels.com](https://www.pexels.com/), except for the logo, which was generated using [Canva](https://canva.com). The globe icon comes from [Boxicons](https://boxicons.com)

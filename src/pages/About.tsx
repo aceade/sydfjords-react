@@ -1,7 +1,10 @@
 import Navbar from "../components/Navbar";
 import "./about.css";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function About() {
+
+    const {t} = useTranslation();
 
     function mockSend(event: Event) {
         event.preventDefault();
@@ -46,9 +49,9 @@ export default function About() {
         <>
             <Navbar />
             <main>
-                <h1>Got a query? Contact us!</h1>
+                <h1>{t("about.title")}</h1>
 
-                <h2>Tourism offices</h2>
+                <h2>{t("about.offices")}</h2>
                 <div id="offices">
                     <div className="office">
                         <p className="officeTitle">Tinland</p>
@@ -68,25 +71,28 @@ export default function About() {
                     </div>
                 </div>
 
-                <h2>Email us</h2>
+                <h2>{t("about.email.title")}</h2>
                 <div id="emailForm">
                     <form>
-                        <label htmlFor="name">Your name</label>
+                        <label htmlFor="name">{t("about.email.name")}</label>
                         <input id="name" required minLength={1}/>
-                        <label htmlFor="email">Your address</label>
+                        <label htmlFor="email">{t("about.email.address")}</label>
                         <input type="email" id="email" required/>
-                        <label htmlFor="message">Your query</label>
+                        <label htmlFor="message">{t("about.email.message")}</label>
                         <textarea id="message" required minLength={1}></textarea>
-                        <button onClick={() => mockSend}>Submit</button>
+                        <button onClick={() => mockSend}>{t("buttons.submit")}</button>
                         <p id="submitStatus"></p>
                     </form>
                 </div>
 
                 <h2>About</h2>
                 <div id="about">
-                    <p>This is a React practice project, basically porting <a href="https://github.com/aceade/sydfjords">this Vue app</a> to React.</p>
-                    <p>The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency.</p>
-                    <p>If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords-react">find it here</a>.</p>
+                    <p>
+                    <Trans i18nKey={"about.info.info1"} t={t} components={{a: <a href="https://github.com/aceade/sydfjords"></a>}}>
+                        <p>This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>.</p>
+                    </Trans>
+                    </p>
+                    <p>{t("about.info.info2")}</p>
                 </div>
             </main>
         </>

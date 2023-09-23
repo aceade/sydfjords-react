@@ -27,6 +27,8 @@
     background-color: #ff8b68;
     padding: 10px;
     text-align: left;
+    place-items: center;
+    display: flex;
 }
 
 /* Using border-box to keep things consistently sized */
