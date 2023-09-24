@@ -1,11 +1,9 @@
 # sydfjords-react
-A React practice project, porting another one from Vue.
+A React practice project, porting my [sydfjords](https://aceade.github.io/sydfjords) repo to React. Like the previous one, this is responsive and uses a basic CI/CD pipeline (GitHub Actions), but also includes basic localisation.
 
-This is a port of my [sydfjords](https://aceade.github.io/sydfjords) repo to React.
+## Commands
 
-## Building
-
-This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands should work roughly the same.
+This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands should work roughly the same, as pnpm is effectively a drop-in replacement for npm.
 
 - `pnpm install` installs dependencies. Unlike npm, it adds dependencies into a global store instead of a per-project node_modules folder.
 - `pnpm run dev` runs a development build.
@@ -13,20 +11,24 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 - `pnpm run preview` deploys a local preview of the production build.
 - `pnpm update` updates all outdated dependencies.
 
+### Deploying
+
+The build uses a GitHub Action ([view build file](.github/workflows/build.yml)) to build the React app and then deploys the contents of the `dist/` folder as a static page.
+
 ## Notes on responsiveness
 
-The targeted screen widths for this are:
+The targeted screen widths in pixels for this are:
 
-- 320 pixels
+- 320
 - 480
 - 600
 - 800
 - 1080
-- 1920 pixels (largest).
+- 1920
 
 ## Accessibility
 
-I manually run this through the WAVE extension for Firefox. It hasn't reported anything yet, but improvements are welcome.
+I manually run this through the WAVE extension for Firefox. It hasn't reported anything yet, but improvements are welcome (especially ways to automate this).
 
 ## Localisation
 
@@ -38,7 +40,7 @@ Localisation keys have been implemented across the site, but currently only the 
 - Arabic
 - Japanese
 
-I am not a professional translator. Corrections are welcome.
+I am not a professional translator, so corrections are welcome.
 
 ## Credits/Sources
 
