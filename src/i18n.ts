@@ -114,11 +114,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
@@ -245,11 +248,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
@@ -373,11 +379,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
@@ -501,11 +510,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
@@ -629,11 +641,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
@@ -760,11 +775,14 @@ i18n
               title: "Email Us",
               name: "Your Name",
               address: "Your Email",
-              message: "Your Message"
+              message: "Your Message",
+              success: "Your message has been sent",
+              failure: "Your message could not be sent. Please try again later",
+              invalid: "Please fill out all fields"
             },
             info: {
               info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
-              info2: "The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency. ",
+              info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
           navbar: {
