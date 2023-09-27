@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import "./about.css";
 import { useTranslation, Trans } from "react-i18next";
@@ -5,9 +6,9 @@ import { useTranslation, Trans } from "react-i18next";
 export default function About() {
 
     const {t} = useTranslation();
+    const [statusText, setStatusText] = useState("");
 
-    function mockSend(event: Event) {
-        event.preventDefault();
+    async function mockSend() {
     
         // one downside to TypeScript: I have to do all this casting crap
         let name: string = (document.getElementById("name") as HTMLInputElement).value;
@@ -17,12 +18,27 @@ export default function About() {
         let validation = validateDetails(name, email, message);
     
         if (validation.nameValid && validation.emailValid && validation.messageValid) {
-            let delay: number = Math.random() * 3000;
-            setTimeout(()=>{
-                notifyResult("Your message has been sent");
-            }, delay);
+
+            try {
+                let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name, email, message
+                    })
+                });
+                if (response.status === 200) {
+                    notifyResult(t("about.email.success"));
+                } else {
+                    notifyResult(t("about.email.failure"));
+                }
+            } catch (error) {
+                console.error(error);
+                notifyResult(t("about.email.failure"));
+            }
+            
+            
         } else {
-            let message = "Please fill out all fields";
+            let message = t("about.email.invalid");
             notifyResult(message);
         }
     
@@ -38,11 +54,10 @@ export default function About() {
     }
     
     function notifyResult(result: string) {
-        let submitStatus = (document.getElementById("submitStatus") as HTMLParagraphElement);
-        submitStatus.textContent = result;
+        setStatusText(result);
         setTimeout(() => {
-            submitStatus.textContent = "";
-        }, 3000);
+            setStatusText("");
+        }, 2000);
     }
 
     return (
@@ -73,16 +88,16 @@ export default function About() {
 
                 <h2>{t("about.email.title")}</h2>
                 <div id="emailForm">
-                    <form>
+                    <div>
                         <label htmlFor="name">{t("about.email.name")}</label>
                         <input id="name" required minLength={1}/>
                         <label htmlFor="email">{t("about.email.address")}</label>
                         <input type="email" id="email" required/>
                         <label htmlFor="message">{t("about.email.message")}</label>
                         <textarea id="message" required minLength={1}></textarea>
-                        <button onClick={() => mockSend}>{t("buttons.submit")}</button>
-                        <p id="submitStatus"></p>
-                    </form>
+                        <button onClick={mockSend}>{t("buttons.submit")}</button>
+                        <p id="submitStatus">{statusText}</p>
+                    </div>
                 </div>
 
                 <h2>About</h2>

@@ -79,7 +79,7 @@ export default function Navbar() {
             <nav className="topnav">
                 <div className="dropdown">
                     <button className="dropbtn" onClick={openSubMenu}>
-                        <img src="/sydfjords-react/icons/globe.svg" alt={t("navbar.changeLang.alt")} title={t("navbar.changeLang.title")}/>
+                        <img id="changeLangIcon" src="/sydfjords-react/icons/globe.svg" alt={t("navbar.changeLang.alt")} title={t("navbar.changeLang.title")}/>
                     </button>
                     <div className="dropdown-content">
                     {Object.keys(languages).map((lng) => (
