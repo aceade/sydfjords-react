@@ -1,4 +1,5 @@
 import { ImageDetails } from "./ImageDetails";
+import "./Location.css";
 
 export interface LocationProps {
     title: string;

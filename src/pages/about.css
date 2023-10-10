@@ -8,6 +8,7 @@
     border-radius: 0px 0px 10px 10px;
     justify-content: center;
     width: 100%;
+    max-width: 1440px;
 }
 
 .office {
@@ -69,10 +70,13 @@
 
     #offices {
         grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1440px;
+        margin: 0 auto;
     }
 
 
     #emailForm {
         max-width: 900px;
+        margin: 0 auto;
     }
 }
