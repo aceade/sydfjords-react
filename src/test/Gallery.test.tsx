@@ -27,7 +27,6 @@ it("Should be able to change images", async() => {
         altText: "Test2"
     }];
     render(<Gallery images={images}></Gallery>);
-    expect(true).toBeTruthy();
 
     let img = await screen.findByRole("img");
     expect(img).toHaveAttribute("src", "image1.jpg");
