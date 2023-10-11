@@ -9,4 +9,7 @@ export default {
         '\\./(gif|ttf|eot|svg|png)$': '<rootDir>/src/test/__ mocks __/fileMock.js',
         "\\.(css|less)$": "<rootDir>/src/test/__mocks__/cssMock.js"
     },
+    setupFiles: [
+        "<rootDir>/src/test/__mocks__/setup.js"
+    ]
 }
