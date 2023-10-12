@@ -1,4 +1,6 @@
 # sydfjords-react
++ [![cov](https://aceade.github.io/sydfjords-react/badges/coverage.svg)](https://github.com/aceade/sydfjords-react/actions)
+
 A React practice project, porting my [sydfjords](https://aceade.github.io/sydfjords) repo to React. Like the previous one, this is responsive and uses a basic CI/CD pipeline (GitHub Actions), but also includes basic localisation.
 
 ## Commands
@@ -41,6 +43,10 @@ Localisation keys have been implemented across the site, but currently only the 
 - Japanese
 
 I am not a professional translator, so corrections are welcome.
+
+## Unit tests
+
+Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location and Navbar files.
 
 ## Credits/Sources
 
