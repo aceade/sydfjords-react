@@ -42,6 +42,10 @@ Localisation keys have been implemented across the site, but currently only the 
 
 I am not a professional translator, so corrections are welcome.
 
+## Unit tests
+
+Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location and Navbar files.
+
 ## Credits/Sources
 
 All images are from [pexels.com](https://www.pexels.com/), except for the logo, which was generated using [Canva](https://canva.com). The globe icon comes from [Boxicons](https://boxicons.com)
