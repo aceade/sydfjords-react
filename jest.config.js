@@ -13,4 +13,9 @@ export default {
         "<rootDir>/src/test/__mocks__/setup.js"
     ],
     collectCoverage: true,
+    coverageReporters: [
+        "json-summary",
+        "text",
+        "lcov"
+    ]
 }
