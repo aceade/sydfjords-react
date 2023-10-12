@@ -1,4 +1,6 @@
 # sydfjords-react
++ [![cov](https://aceade.github.io/sydfjords-react/badges/coverage.svg)](https://github.com/aceade/sydfjords-react/actions)
+
 A React practice project, porting my [sydfjords](https://aceade.github.io/sydfjords) repo to React. Like the previous one, this is responsive and uses a basic CI/CD pipeline (GitHub Actions), but also includes basic localisation.
 
 ## Commands
