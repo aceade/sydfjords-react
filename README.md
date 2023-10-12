@@ -46,7 +46,7 @@ I am not a professional translator, so corrections are welcome.
 
 ## Unit tests
 
-Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location and Navbar files.
+Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location and Navbar files. Testing the languages changes is not fully functional yet.
 
 ## Credits/Sources
 
