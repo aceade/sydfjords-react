@@ -11,5 +11,6 @@ export default {
     },
     setupFiles: [
         "<rootDir>/src/test/__mocks__/setup.js"
-    ]
+    ],
+    collectCoverage: true,
 }
