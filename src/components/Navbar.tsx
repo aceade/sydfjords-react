@@ -14,7 +14,7 @@ export default function Navbar() {
     const languages: any = {
         en: { nativeName: 'English' },
         de: { nativeName: 'Deutsch' },
-        ga: { nativeName: 'Gaelige' },
+        ga: { nativeName: 'Gaeilge' },
         it: { nativeName: 'Italiano' },
         ar: { nativeName: 'عربي', dir: 'rtl' },
         ja: { nativeName: '日本語'}
