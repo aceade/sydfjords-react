@@ -23,18 +23,21 @@ it("The rendered language should have bold font-weight", () => {
     expect(screen.getByText("Gaeilge")).toHaveStyle("font-weight: normal;");
 });
 
-it("Clicking either submenu button should open that submenu", () => {
+it("Hovering over either submenu button should open that submenu", () => {
     render(<MemoryRouter>
         <Navbar/>
     </MemoryRouter>);
     const button = screen.getByText("navbar.see");
-    fireEvent.click(button);
+    fireEvent.mouseOver(button);
     const link = screen.getByText("navbar.colwdvatn");
     expect(link).toBeVisible();
 
+    fireEvent.click(button);
+    expect(link).not.toBeVisible();
 
-    // the language buttons shouldn't visible until the change langauge icon is clicked
-    expect(screen.getByText("Gaeilge")).not.toBeVisible();
-    fireEvent.click(screen.getByAltText("navbar.changeLang.alt"));
+
+    fireEvent.mouseOver(screen.getByAltText("navbar.changeLang.alt"));
     expect(screen.getByText("Gaeilge")).toBeVisible();
+    fireEvent.click(screen.getByAltText("navbar.changeLang.alt"));
+    expect(screen.getByText("Gaeilge")).not.toBeVisible();
 });
