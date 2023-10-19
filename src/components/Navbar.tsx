@@ -45,17 +45,17 @@ export default function Navbar() {
      */
     function closeAllMenus() {
         (document.querySelector("nav") as HTMLElement).className = "topnav";
-        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+        document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
         (document.querySelector(".dropbtn") as HTMLElement).onmouseover = () => {
-            (document.querySelector(".dropdown-content") as HTMLElement).style.display = "block";
+            document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "block");
         }
         (document.querySelector(".dropdown-content") as HTMLElement).onmouseleave = () => {
-            (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+            document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
         }
     }
     
-    function openSubMenu() {
-        const menu = document.querySelector(".dropdown-content");
+    function openSubMenu(id: string) {
+        const menu = document.getElementById(id);
         if (menu) {
             let menuEl = menu as HTMLElement;
             if (menuEl.style.display === "none") {
@@ -78,10 +78,10 @@ export default function Navbar() {
             <img id="logo" alt="" src="/sydfjords-react/icons/Sydfjords_Logo_1.png"/>
             <nav className="topnav">
                 <div className="dropdown">
-                    <button className="dropbtn" onClick={openSubMenu}>
+                    <button className="dropbtn" onClick={() => openSubMenu("languageMenu")}>
                         <img id="changeLangIcon" src="/sydfjords-react/icons/globe.svg" alt={t("navbar.changeLang.alt")} title={t("navbar.changeLang.title")}/>
                     </button>
-                    <div className="dropdown-content">
+                    <div className="dropdown-content" id="languageMenu">
                     {Object.keys(languages).map((lng) => (
                         <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => changeLanguage(lng)}>
                         {languages[lng].nativeName}
@@ -91,8 +91,8 @@ export default function Navbar() {
                 </div>
                 <Link to="/" onClick={closeAllMenus}>{t("navbar.home")}</Link>
                     <div className="dropdown">
-                        <button className="dropbtn" onClick={openSubMenu}>{t("navbar.see")}</button>
-                        <div className="dropdown-content">
+                        <button className="dropbtn" onClick={() => openSubMenu("attractionsMenu")}>{t("navbar.see")}</button>
+                        <div className="dropdown-content" id="attractionsMenu">
                             <Link to="/colwdvatn" onClick={closeAllMenus}>{t("navbar.colwdvatn")}</Link>
                             <Link to="/loremvik" onClick={closeAllMenus}>{t("navbar.loremvik")}</Link>
                             <Link to="/ipsumvatn" onClick={closeAllMenus}>{t("navbar.ipsumvatn")}</Link>
