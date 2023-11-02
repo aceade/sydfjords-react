@@ -19,4 +19,8 @@ jest.mock('react-i18next', () => ({
         },
       };
     },
+    Trans: ({ children }) => children,
+    initReactI18next: { type: "3rdParty", init: jest.fn() },
   }));
+
+  require('jest-fetch-mock').enableMocks();

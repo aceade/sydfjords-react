@@ -83,6 +83,7 @@ export default function Navbar() {
                     </button>
                     <div className="dropdown-content" id="languageMenu">
                     {Object.keys(languages).map((lng) => (
+                        
                         <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => changeLanguage(lng)}>
                         {languages[lng].nativeName}
                         </button>

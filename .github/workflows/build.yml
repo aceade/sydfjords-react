@@ -42,6 +42,10 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm run build
+      - name: Code Coverage Report
+        uses: romeovs/lcov-reporter-action@v0.3.1
+        with:
+          lcov-file: ./coverage/lcov.info
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

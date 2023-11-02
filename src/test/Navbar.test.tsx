@@ -41,3 +41,33 @@ it("Hovering over either submenu button should open that submenu", () => {
     fireEvent.click(screen.getByAltText("navbar.changeLang.alt"));
     expect(screen.getByText("Gaeilge")).not.toBeVisible();
 });
+
+it("Clicking the change language button should leave the menu open", () => {
+    render(<MemoryRouter>
+        <Navbar/>
+    </MemoryRouter>);
+
+    fireEvent.click(screen.getByText("Gaeilge"));
+    expect(screen.getByText("Gaeilge")).toBeVisible();
+});
+
+it("Clicking a link should close all menus", () => {
+    render(<MemoryRouter>
+        <Navbar/>
+    </MemoryRouter>);
+
+    fireEvent.click(screen.getByText("navbar.home"));
+    expect(screen.getByText("Gaeilge")).not.toBeVisible();
+});
+
+it("", () => {
+    render(<MemoryRouter>
+        <Navbar/>
+    </MemoryRouter>);
+
+    fireEvent.click(screen.getByText("☰"));
+    expect(screen.getByRole("navigation")).toHaveClass("topnav responsive");
+
+    fireEvent.click(screen.getByText("☰"));
+    expect(screen.getByRole("navigation")).toHaveClass("topnav");
+});
