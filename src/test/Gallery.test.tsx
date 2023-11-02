@@ -34,6 +34,12 @@ it("Should be able to change images", async() => {
     fireEvent.click(screen.getByText("buttons.lastImage"));
     expect(img).toHaveAttribute("src", "image2.jpg");
 
+    fireEvent.click(screen.getByText("buttons.lastImage"));
+    expect(img).toHaveAttribute("src", "image1.jpg");
+
+    fireEvent.click(screen.getByText("buttons.nextImage"));
+    expect(img).toHaveAttribute("src", "image2.jpg");
+
     fireEvent.click(screen.getByText("buttons.nextImage"));
     expect(img).toHaveAttribute("src", "image1.jpg");
 
