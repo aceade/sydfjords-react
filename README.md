@@ -11,6 +11,7 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 - `pnpm run build` runs a production build. This is also used during the automated deployment.
 - `pnpm run preview` deploys a local preview of the production build.
 - `pnpm update` updates all outdated dependencies.
+- `pnpm test` runs the Jest unit tests.
 
 ### Deploying
 
@@ -45,7 +46,7 @@ I am not a professional translator, so corrections are welcome.
 
 ## Unit tests
 
-Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location and Navbar files. Testing the languages changes is not fully functional yet.
+Tests use Jest and Testing-Library. At the moment, these are limited to the Gallery, Location, Navbar and About files.
 
 ## Credits/Sources
 

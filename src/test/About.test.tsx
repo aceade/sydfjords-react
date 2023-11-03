@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, act } from "@testing-library/react"
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom';
 import About from '../pages/About';
 
@@ -47,14 +48,15 @@ describe("Test the About page", () => {
         </MemoryRouter>);
 
         // need to run this asynchronously
-        await act(() => {
-            (screen.getByLabelText("about.email.name") as HTMLInputElement).value = "Me";
-            (screen.getByLabelText("about.email.address") as HTMLInputElement).value = "me@example.com";
-            (screen.getByLabelText("about.email.message") as HTMLTextAreaElement).value = "Test";
+        await act(async () => {
+            // simulate typing into this
+            await userEvent.type(screen.getByLabelText("about.email.name"), "Me");
+            await userEvent.type(screen.getByLabelText("about.email.address"), "me@example.com");
+            await userEvent.type(screen.getByLabelText("about.email.message"), "Test");
             fireEvent.click(screen.getByText("buttons.submit"));
         });
         
-        expect(screen.getByText("about.email.success")).toBeVisible();
+        expect(screen.getByText("about.email.success")).toBeInTheDocument();
     });
 
     it("If sending email fails, we should warn the user", async() => {
@@ -69,14 +71,15 @@ describe("Test the About page", () => {
         </MemoryRouter>);
 
         // need to run this asynchronously
-        await act(() => {
-            (screen.getByLabelText("about.email.name") as HTMLInputElement).value = "Me";
-            (screen.getByLabelText("about.email.address") as HTMLInputElement).value = "me@example.com";
-            (screen.getByLabelText("about.email.message") as HTMLTextAreaElement).value = "Test";
+        await act(async () => {
+            // simulate typing into this
+            await userEvent.type(screen.getByLabelText("about.email.name"), "Me");
+            await userEvent.type(screen.getByLabelText("about.email.address"), "me@example.com");
+            await userEvent.type(screen.getByLabelText("about.email.message"), "Test");
             fireEvent.click(screen.getByText("buttons.submit"));
         });
         
-        expect(screen.getByText("about.email.failure")).toBeVisible();
+        expect(screen.getByText("about.email.failure")).toBeInTheDocument();
     });
 });
 

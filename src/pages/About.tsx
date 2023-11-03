@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./about.css";
 import { useTranslation, Trans } from "react-i18next";
+import { updateFormState, StateAction } from "../reducers/email";
 
 export default function About() {
 
     const {t} = useTranslation();
     const [statusText, setStatusText] = useState("");
+    
+    const [formState, dispatch] = useReducer(updateFormState, { name: "", email: "", message: "" });
 
     async function mockSend() {
     
-        // one downside to TypeScript: I have to do all this casting crap
-        let name: string = (document.getElementById("name") as HTMLInputElement).value;
-        let email: string = (document.getElementById("email") as HTMLInputElement).value;
-        let message: string = (document.getElementById("message") as HTMLTextAreaElement).value;
+        let name: string = formState.name;
+        let email: string = formState.email;
+        let message: string = formState.message;
     
         let validation = validateDetails(name, email, message);
     
         if (validation.nameValid && validation.emailValid && validation.messageValid) {
-
+            
             try {
                 let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
                     method: "POST",
@@ -28,6 +30,7 @@ export default function About() {
                 });
                 if (response.status === 200) {
                     notifyResult(t("about.email.success"));
+                    dispatch({type: StateAction.reset});
                 } else {
                     notifyResult(t("about.email.failure"));
                 }
@@ -90,11 +93,20 @@ export default function About() {
                 <div id="emailForm">
                     <div>
                         <label htmlFor="name">{t("about.email.name")}</label>
-                        <input id="name" required minLength={1}/>
+                        <input id="name" required minLength={1} onChange={(e) => dispatch({
+                            type: StateAction.setName,
+                            value: e.target.value
+                        })} />
                         <label htmlFor="email">{t("about.email.address")}</label>
-                        <input type="email" id="email" required/>
+                        <input type="email" id="email" required onChange={(e) => dispatch({
+                            type: StateAction.setAddress,
+                            value: e.target.value
+                        })}/>
                         <label htmlFor="message">{t("about.email.message")}</label>
-                        <textarea id="message" required minLength={1}></textarea>
+                        <textarea id="message" required minLength={1} onChange={(e) => dispatch({
+                            type: StateAction.setMessage,
+                            value: e.target.value
+                        })}></textarea>
                         <button onClick={mockSend}>{t("buttons.submit")}</button>
                         <p id="submitStatus">{statusText}</p>
                     </div>
