@@ -120,7 +120,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
@@ -254,7 +254,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
@@ -385,7 +385,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
@@ -516,7 +516,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
@@ -647,7 +647,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },
@@ -781,7 +781,7 @@ i18n
               invalid: "Please fill out all fields"
             },
             info: {
-              info1: "This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>",
+              info1: "This is a React practice project, basically porting <0>this Vue app</0> to React. If you want to take a look at the source code, you can <1>find it here</1>.",
               info2: "The endpoint that the email form uses will just echo the response back to the user.",
             }
           },

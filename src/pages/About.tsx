@@ -114,9 +114,12 @@ export default function About() {
 
                 <h2>About</h2>
                 <div id="about">
-                    <Trans i18nKey={"about.info.info1"} t={t} components={{a: <a href="https://github.com/aceade/sydfjords"></a>}}>
-                        <p>This is a React practice project, basically porting <a>this Vue app</a> to React. If you want to take a look at the source code, you can <a>find it here</a>.</p>
+                    {/*Need to wrap the Trans within another paragraph to preserve the formatting for some reason*/}
+                    <p>
+                    <Trans i18nKey={"about.info.info1"} t={t} components={[<a href="https://github.com/aceade/sydfjords"/>,<a href="https://github.com/aceade/sydfjords-react"/>]}>
+                        <p>This is a React practice project, basically porting <a href="https://github.com/aceade/sydfjords">this Vue app</a> to React. If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords-react">find it here</a></p>
                     </Trans>
+                    </p>
                     <p>{t("about.info.info2")}</p>
                 </div>
             </main>
