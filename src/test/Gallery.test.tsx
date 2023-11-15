@@ -10,7 +10,7 @@ it("Render the gallery", async() => {
         altText: "First Image"
     }];
     render(<Gallery images={images}></Gallery>);
-    let img = await screen.findByAltText("First Image");
+    const img = await screen.findByAltText("First Image");
     expect(img).toHaveAttribute("src", "image1.jpg");
 });
 
@@ -28,7 +28,7 @@ it("Should be able to change images", async() => {
     }];
     render(<Gallery images={images}></Gallery>);
 
-    let img = await screen.findByRole("img");
+    const img = await screen.findByRole("img");
     expect(img).toHaveAttribute("src", "image1.jpg");
 
     fireEvent.click(screen.getByText("buttons.lastImage"));

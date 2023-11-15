@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import './Navbar.css';
 import { useTranslation } from "react-i18next";
 
+interface LanguageMapping {
+    code: string;
+    nativeName: string;
+    dir?: string;
+}
 
 /**
  * 
@@ -11,14 +16,26 @@ export default function Navbar() {
 
     const {t, i18n } = useTranslation();
 
-    const languages: any = {
-        en: { nativeName: 'English' },
-        de: { nativeName: 'Deutsch' },
-        ga: { nativeName: 'Gaeilge' },
-        it: { nativeName: 'Italiano' },
-        ar: { nativeName: 'عربي', dir: 'rtl' },
-        ja: { nativeName: '日本語'}
-      };
+    const languages: LanguageMapping[] = [{
+        code: "en",
+        nativeName: "English"
+    }, {
+        code: "de",
+        nativeName: "Deutsch"
+    },{
+        code: "it",
+        nativeName: "Italiano"
+    },{
+        code: "ga",
+        nativeName: "Gaeilge"
+    },{
+        code: "ar",
+        nativeName: "عربي",
+        dir: "rtl"
+    },{
+        code: "ja",
+        nativeName: "日本語"
+    }]
 
     function openMenu() {
         const nav = document.querySelector("nav");
@@ -57,7 +74,7 @@ export default function Navbar() {
     function openSubMenu(id: string) {
         const menu = document.getElementById(id);
         if (menu) {
-            let menuEl = menu as HTMLElement;
+            const menuEl = menu as HTMLElement;
             if (menuEl.style.display === "none") {
                 menuEl.style.display = "block";
             } else {
@@ -82,10 +99,10 @@ export default function Navbar() {
                         <img id="changeLangIcon" src="/sydfjords-react/icons/globe.svg" alt={t("navbar.changeLang.alt")} title={t("navbar.changeLang.title")}/>
                     </button>
                     <div className="dropdown-content" id="languageMenu">
-                    {Object.keys(languages).map((lng) => (
+                    {languages.map((lng) => (
                         
-                        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => changeLanguage(lng)}>
-                        {languages[lng].nativeName}
+                        <button key={lng.code} style={{ fontWeight: i18n.resolvedLanguage === lng.code ? 'bold' : 'normal' }} type="submit" onClick={() => changeLanguage(lng.code)}>
+                        {lng.nativeName}
                         </button>
                     ))}
                     </div>

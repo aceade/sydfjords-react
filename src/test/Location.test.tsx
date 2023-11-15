@@ -22,10 +22,10 @@ it ("Should render the Location entry", async() => {
     };
     render(<Location title={props.title} blurb={props.blurb} images={props.images} endParagraph={props.endParagraph}></Location>);
 
-    let header = await screen.findByRole("heading", {level: 1});
+    const header = await screen.findByRole("heading", {level: 1});
     expect(header).toHaveTextContent(props.title);
 
-    let images = await screen.findAllByRole("img");
+    const images = await screen.findAllByRole("img");
     expect(images[0]).toHaveAttribute("src", "image1.jpg");
     expect(images[0]).toHaveAttribute("alt", "Test1");
     expect(images[1]).toHaveAttribute("src", "image2.jpg");

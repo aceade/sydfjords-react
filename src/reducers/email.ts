@@ -6,7 +6,7 @@ export enum StateAction {
     reset
 }
 
-export function updateFormState(state: any, action: {type: StateAction; value?: string}) {
+export function updateFormState(state: object, action: {type: StateAction; value?: string}) {
     
     switch (action.type) {
         case StateAction.setName:

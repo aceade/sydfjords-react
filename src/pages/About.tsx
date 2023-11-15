@@ -13,16 +13,16 @@ export default function About() {
 
     async function mockSend() {
     
-        let name: string = formState.name;
-        let email: string = formState.email;
-        let message: string = formState.message;
+        const name: string = formState.name!;
+        const email: string = formState.email!;
+        const message: string = formState.message!;
     
-        let validation = validateDetails(name, email, message);
+        const validation = validateDetails(name, email, message);
     
         if (validation.nameValid && validation.emailValid && validation.messageValid) {
             
             try {
-                let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
+                const response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
                     method: "POST",
                     body: JSON.stringify({
                         name, email, message
@@ -41,7 +41,7 @@ export default function About() {
             
             
         } else {
-            let message = t("about.email.invalid");
+            const message = t("about.email.invalid");
             notifyResult(message);
         }
     
