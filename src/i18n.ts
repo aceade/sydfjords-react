@@ -46,8 +46,8 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
-              blurb1: "A week on the train from Tinland through the pine forests and valleys.",
+              title: "<0>Take The Train</0>",
+              blurb1: "Two days on the train from Tinland through the pine forests and valleys. Four days from Levarche.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
             sea: {
@@ -180,7 +180,7 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
+              title: "<0>Take The Train</0>",
               blurb1: "A week on the train from Tinland through the pine forests and valleys.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
@@ -311,7 +311,7 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
+              title: "<0>Take The Train</0>",
               blurb1: "A week on the train from Tinland through the pine forests and valleys.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
@@ -442,7 +442,7 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
+              title: "<0>Take The Train</0>",
               blurb1: "A week on the train from Tinland through the pine forests and valleys.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
@@ -573,7 +573,7 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
+              title: "<0>Take The Train</0>",
               blurb1: "A week on the train from Tinland through the pine forests and valleys.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
@@ -707,7 +707,7 @@ i18n
           travel: {
             title: "How to get here",
             trains: {
-              title: "Take The Train",
+              title: "<0>Take The Train</0>",
               blurb1: "A week on the train from Tinland through the pine forests and valleys.",
               blurb2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             },
