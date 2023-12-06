@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import Navbar from "../components/Navbar";
 
 export default function Travel() {
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -11,7 +11,13 @@ export default function Travel() {
             <main>
                 <h1>{t("travel.title")}</h1>
 
-                <h2>{t("travel.trains.title")}</h2>
+
+                <h2>
+                    <Trans i18nKey={"travel.trains.title"} t={t} components={[<a href="https://github.com/aceade/colwdvatn-rails/" />]}>
+                        <a>Take The Train</a>
+                    </Trans>
+                </h2>
+
                 <div id="trains">
                     <img className="mainImage" src="/sydfjords-react/travel/train-480.webp" alt="A steam train in the snow"
                         sizes="(max-width: 400px) 320px, (max-width: 600px) 480px, max-width: 800px) 600px, 1080px"
