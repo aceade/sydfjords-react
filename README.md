@@ -35,6 +35,7 @@ I manually run this through the WAVE extension for Firefox. It hasn't reported a
 ## Localisation
 
 Localisation keys have been implemented across the site, but currently only the Navbar has actual translation values. This is limited to the current languages:
+
 - English (default)
 - Irish (purely because I *am* Irish)
 - German

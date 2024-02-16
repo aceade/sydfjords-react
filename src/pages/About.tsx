@@ -22,7 +22,7 @@ export default function About() {
         if (validation.nameValid && validation.emailValid && validation.messageValid) {
             
             try {
-                const response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
+                const response = await window.fetch("https://aceade-express-echo.azurewebsites.net/api/email", {
                     method: "POST",
                     body: JSON.stringify({
                         name, email, message
