@@ -40,20 +40,16 @@ export default function Navbar() {
     function openMenu() {
         const nav = document.querySelector("nav");
     
-        // TypeScript's typesafety doesn't like that nav *might* be null. Even if in practice it won't be.
-        if (nav) {
-            if (nav.className === "topnav") {
-                nav.className += " responsive";
-            } else {
-                nav.className = "topnav";
-            }
-    
-            // prevent this hanging open or needing to be clicked twice upon loading the page
-            const menu = document.querySelector(".dropdown-content");
-            if (menu) {
-                (menu as HTMLElement).style.display = "none";
-            }
+        // Tell TypeScript that nav will NOT be null instead of adding a needless check
+        if (nav!.className === "topnav") {
+            nav!.className += " responsive";
+        } else {
+            nav!.className = "topnav";
         }
+    
+        // prevent this hanging open or needing to be clicked twice upon loading the page
+        const menu = document.querySelector(".dropdown-content");
+        (menu! as HTMLElement).style.display = "none";
         
     }
     
@@ -73,14 +69,14 @@ export default function Navbar() {
     
     function openSubMenu(id: string) {
         const menu = document.getElementById(id);
-        if (menu) {
+        // if (menu) {
             const menuEl = menu as HTMLElement;
             if (menuEl.style.display === "none") {
                 menuEl.style.display = "block";
             } else {
                 menuEl.style.display = "none";
             }
-        }
+        // }
         
     }
 
